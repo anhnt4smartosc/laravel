@@ -16,7 +16,9 @@ class BlogController extends Controller
      */
     public function index()
     {
-        echo __METHOD__;
+        $blogList = Blogs::all();
+
+        return \View::make('admin.blogs.index', ['blogList' => $blogList]);
     }
 
     /**
@@ -26,7 +28,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return \View::make('blogs.create', ['name' => 'Tuan Anh']);
+        return \View::make('admin.blogs.create', ['name' => 'Tuan Anh']);
         //
     }
 
